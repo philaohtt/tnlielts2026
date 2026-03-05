@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --secondary: #64748b;
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --border: #e2e8f0;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 80px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 12px;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--bg-body)] text-[var(--text-main)] font-sans antialiased overflow-hidden h-screen flex;
+  }
+}
+
+.sidebar-transition {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item-active {
+  @apply bg-[#eff6ff] text-[var(--primary)] font-semibold border-l-3 border-[var(--primary)] pl-[9px]!;
+}
+
+.launch-card-hover {
+  @apply hover:border-[var(--primary)] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200;
+}
+
+/* TinyMCE Content Styles for Previews */
+.tinymce-content {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.tinymce-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.tinymce-content td, .tinymce-content th {
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem;
+}
+.tinymce-content p {
+  margin-bottom: 1rem;
+}
+.tinymce-content p:last-child {
+  margin-bottom: 0;
+}
+.tinymce-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.tinymce-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.tinymce-content img {
+  max-width: 100%;
+  height: auto;
+}
+.tinymce-content strong, .tinymce-content b {
+  font-weight: 700;
+}
+.tinymce-content em, .tinymce-content i {
+  font-style: italic;
+}
+.tinymce-content u {
+  text-decoration: underline;
+}
